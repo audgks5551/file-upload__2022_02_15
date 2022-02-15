@@ -12,7 +12,7 @@ import java.util.Date;
 public class Document {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 데이터베이스에서 번호 지정
     private Long id;
 
     @Column(length = 512, nullable = false, unique = true)
@@ -23,6 +23,7 @@ public class Document {
     @Column(name = "upload_time")
     private Date uploadTime;
 
+    @Lob // `LONGBLOB`으로 설정됨
     private byte[] content; // 업로드 파일
 
 }
