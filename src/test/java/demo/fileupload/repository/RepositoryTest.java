@@ -1,7 +1,6 @@
 package demo.fileupload.repository;
 
-import demo.fileupload.DocumentRepository;
-import demo.fileupload.Document;
+import demo.fileupload.Entity.Document;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

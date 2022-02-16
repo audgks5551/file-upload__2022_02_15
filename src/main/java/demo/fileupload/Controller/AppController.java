@@ -1,9 +1,11 @@
-package demo.fileupload;
+package demo.fileupload.Controller;
 
-import demo.fileupload.Document;
-import demo.fileupload.DocumentRepository;
+import demo.fileupload.repository.DocumentRepository;
+import demo.fileupload.Entity.Document;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,15 +15,24 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class AppController {
 
-    @Autowired
-    private DocumentRepository documentRepository;
+    private final DocumentRepository documentRepository;
 
     @GetMapping("/")
-    public String viewHomePage() {
+    public String viewHomePage(Model model) {
+
+        List<Document> listDocs = documentRepository.findAll();
+
+        // view로 데이터 전달
+        // addAttribute()로 전달한 데이터는 새로고침을 해도 파라미터에 남아있다.
+        // Model객체는 request영역만 가능하기 때문에 Session영역에 값 저장은 불가능
+        model.addAttribute("listDocs", listDocs);
+
         return "home";
     }
 

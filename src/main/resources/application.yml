@@ -34,6 +34,11 @@ spring:
     freemarker:
       cache: false
 
+  servlet:
+    multipart: # multipart 허용 사이즈 정하기
+      max-request-size: 4GB
+      max-file-size: 4GB
+
 logging.level:
   #org.hibernate.SQL: debug
   org.hibernate.type: trace

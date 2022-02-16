@@ -1,6 +1,8 @@
-package demo.fileupload;
+package demo.fileupload.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.util.Date;
 @Entity
 @Table(name = "documents")
 @Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Document {
 
     @Id
@@ -26,4 +30,9 @@ public class Document {
     @Lob // `LONGBLOB`으로 설정됨
     private byte[] content; // 업로드 파일
 
+    public Document(Long id, String name, long size) {
+        this.id = id;
+        this.name = name;
+        this.size = size;
+    }
 }
