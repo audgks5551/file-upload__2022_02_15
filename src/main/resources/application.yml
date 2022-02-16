@@ -1,5 +1,9 @@
 server:
   port: 81
+  servlet:
+    session: # url에 ;JSESSIONID 형식으로 붙지 않게 함
+      timeout: 30m
+      tracking-modes: cookie
 
 spring:
   datasource:

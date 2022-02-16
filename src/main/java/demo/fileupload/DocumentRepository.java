@@ -1,7 +1,6 @@
-package demo.fileupload.repository;
+package demo.fileupload;
 
 
-import demo.fileupload.Entity.Document;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

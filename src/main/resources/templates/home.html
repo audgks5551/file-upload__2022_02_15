@@ -12,8 +12,13 @@
       <div>
         <h1>문서 관리</h1>
       </div>
-      <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
-        <div>
+
+      <div class="text-success">
+        <h3>[[${message}]]</h3>
+      </div>
+
+      <form th:action="@{/upload}" method="post" enctype="multipart/form-data" style="max-width: 600px; margin: 0 auto">
+        <div class="border rounded m-3">
           <h2>이미지 업로드</h2>
           <p>
             <input type="file" name="document" required />

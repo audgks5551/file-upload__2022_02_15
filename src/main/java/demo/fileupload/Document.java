@@ -1,4 +1,4 @@
-package demo.fileupload.Entity;
+package demo.fileupload;
 
 import lombok.Getter;
 import lombok.Setter;
